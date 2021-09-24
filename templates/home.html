@@ -1,2 +1,30 @@
-<!DOCTYPE html>
-<h1>HELLO WELCOME TO THE BLOG</h1>
+{% extends 'base.html' %}
+<!-- <h1>HELLO WELCOME TO THE BLOG</h1> -->
+<h1>{% block title %}{% endblock %}</h1>
+
+<br>
+<p>Read............ Write ...........  Share...............</p>
+
+
+{% block main_contents %} 
+
+<a href="{% url 'createpost_path'  %}">Create Post</a>
+
+{% for p in object_list %}
+<div class="container">
+    <ul>
+        <li><h6><a href="{% url 'postdetails_path' p.pk %}">{{p.title}} </a>- {{p.Author }}</h6></li>
+        <li>{{ p.postcategory }}</li>
+        <li>{{ p.Created_on }}</li>
+    </ul>
+    
+    <div class="container">
+        {{ p.Contents|slice:":150"}}
+    </div>
+    <hr>
+</div>
+
+
+{% endfor %}
+
+{% endblock %}

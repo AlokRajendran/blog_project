@@ -1,0 +1,17 @@
+
+{% extends 'base.html' %}
+
+{% block title %}{% endblock %}
+
+{% block main_contents %} 
+
+<div class="container-fruid ">
+    <h3>{{ post.title }} - {{ post.Author }}</h3>
+    <h5>{{ post.Created_on }}</h5>
+    <h5>{{ post.postcategory }}</h5>
+    <hr>
+    {{ post.Contents }}<br>
+   
+</div>
+
+{% endblock %}

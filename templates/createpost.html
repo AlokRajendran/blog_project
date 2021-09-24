@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}{% endblock %}
+
+{% block main_contents %} 
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <!-- //as_p is given to display as prgrph , can also as_li... -->
+    <button>Create Post</button>
+</form>
+
+{% endblock %}
